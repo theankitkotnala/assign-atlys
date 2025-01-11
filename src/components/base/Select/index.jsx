@@ -8,7 +8,11 @@ const Select = ({ title, value, options, ...props }) => {
             value={value}
             className='disabled:bg-[#F5F5F5] border border-solid border-[#D3D3D3] rounded-lg py-2 px-2 mt-1 w-full text-xs font-medium text-[#252525]'>
             {options.length > 0 ?
-                options.map(option => <option value={option.value} className='pr-2'>{option.text}</option>)
+                options.map((option, ind) => <option
+                    value={option.value}
+                    className='pr-2' key={`${option.value}_${ind}`}>
+                    {option.text}
+                </option>)
                 : null}
         </select>
     </div>

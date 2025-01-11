@@ -1,0 +1,9 @@
+/**
+ * Action Types File Percentage Funded data
+ * Write your all action types here
+ */
+
+/** PERCENTAGE FUNDED Action Types */
+export const GET_PERCENTAGE_FUNDED_DATA = "PERCENTAGE_FUNDED/GET_PERCENTAGE_FUNDED_DATA";
+export const SAVE_PERCENTAGE_FUNDED_DATA = "PERCENTAGE_FUNDED/SAVE_PERCENTAGE_FUNDED_DATA";
+export const SET_REQUEST_LOADER = "PERCENTAGE_FUNDED/SET_REQUEST_LOADER";

@@ -1,0 +1,9 @@
+/**
+ * Action Types File CalculationMap data
+ * Write your all action types here
+ */
+export const SET_CALCULATOR_INPUT = "CALCULATION_MAP/SET_CALCULATOR_INPUT";
+export const SET_CALCULATOR_OUTPUT = "CALCULATION_MAP/SET_CALCULATOR_OUTPUT";
+export const SET_FUNCTION_BODY = "CALCULATION_MAP/SET_FUNCTION_BODY";
+export const SET_FUNCTIONS = "CALCULATION_MAP/SET_FUNCTIONS";
+
