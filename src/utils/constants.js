@@ -3,7 +3,7 @@ export const FUNCTION_BODY = {
     equation: '',
     output: '',
     functionNumber: 1,
-    nextFunctionNumber: 2 
+    nextFunctionNumber: 2
 }
 
 export const function_1 = {
