@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Input, Select } from '@components/base';
+import { ConnectorDot } from '@components';
 import listDotIcon from '@assets/icons/ic-list_dots.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFunctionBody, setCalcultorOutput } from '@redux/actions';
 import { equationResolver } from '@utils/helper';
 import EquationInOutChip from '../equationInOutChip';
-import dotIcon from '@assets/icons/ic-in-out-dot.svg';
 
 const EquationCard = (props) => {
     const { functionBody } = props
@@ -16,7 +16,7 @@ const EquationCard = (props) => {
     useEffect(() => {
         if (functionBody?.input && functionBody?.equation) {
             const output = String(equationResolver(functionBody?.equation, functionBody.input))
-            if (output !== 'NA') {
+            if (output) {
                 if (functionBody?.nextFunctionNumber) {
                     dispatch(setFunctionBody({
                         number: functionBody?.nextFunctionNumber,
@@ -45,11 +45,11 @@ const EquationCard = (props) => {
 
     }
 
-    return <div className='relative h-[251px] w-[235px] p-5 bg-white rounded-2xl border border-[#DFDFDF] border-solid drop-shadow-[0_0_6px_0_rgba(0,0,0,0.05)]'>
-        {functionBody?.functionNumber === 1 && <div className='absolute bottom-0 left-[-128px]'>
+    return <div className='relative h-[251px] w-[235px] p-4 bg-white rounded-2xl border border-[#DFDFDF] border-solid drop-shadow-[0_0_6px_0_rgba(0,0,0,0.05)]'>
+        {functionBody?.functionNumber === 1 && <div className='absolute bottom-0 left-[-127px]'>
             <EquationInOutChip input={true} />
         </div>}
-        {functionBody?.nextFunctionNumber === null && <div className='absolute bottom-0 right-[-130px]'>
+        {functionBody?.nextFunctionNumber === null && <div className='absolute bottom-0 right-[-126px]'>
             <EquationInOutChip input={false} />
         </div>}
         <div className='flex items-center justify-start pb-2'>
@@ -85,12 +85,12 @@ const EquationCard = (props) => {
 
             <div className='w-full flex justify-between items-center items-stretch absolute w-[195px] bottom-[17px]'>
                 <div className='flex items-end justify-center'>
-                    <img src={dotIcon} width={15} height={15} />
+                    <ConnectorDot/>
                     <span className='ml-2 text-xs font-medium text-[#585757]'>input</span>
                 </div>
                 <div className='flex items-end justify-center'>
                     <span className='mr-2 text-xs font-medium text-[#585757]'>output</span>
-                    <img src={dotIcon} width={15} height={15} />
+                    <ConnectorDot/>
                 </div>
             </div>
         </div>

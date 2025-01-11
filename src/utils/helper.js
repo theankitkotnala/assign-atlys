@@ -21,10 +21,10 @@ export const equationResolver = (equation, input) => {
     // Replace 'x' with the value and '^' with '**' for exponentiation
     let simplifiedEquation = equation.split('').reduce((acc, curr, index, arr) => {
       if (index > 0 && curr === '(') {
-        acc += '*'
+        acc = acc + '*' + curr
       }
       acc += curr;
-      if ((!Number.isNaN(curr) && arr[index + 1] === 'x')) {
+      if ((!isNaN(curr) && arr[index + 1] === 'x')) {
         acc += '*'
       }
       return acc
@@ -32,6 +32,6 @@ export const equationResolver = (equation, input) => {
     simplifiedEquation = simplifiedEquation.replace(/x/g, `${input}`).replace(/\^/g, '**');
     return eval(simplifiedEquation);
   } catch (e) {
-    return 'NA';
+    
   }
 }
