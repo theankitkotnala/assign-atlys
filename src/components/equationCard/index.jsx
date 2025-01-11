@@ -83,7 +83,7 @@ const EquationCard = (props) => {
                 </div>
             </div>
 
-            <div className='w-full flex justify-between items-center items-stretch absolute w-[195px] bottom-[17px]'>
+            <div className='flex justify-between items-center absolute w-[195px] bottom-[17px]'>
                 <div className='flex items-end justify-center'>
                     <ConnectorDot/>
                     <span className='ml-2 text-xs font-medium text-[#585757]'>input</span>
